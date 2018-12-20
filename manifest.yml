@@ -6,12 +6,13 @@ applications:
   timeout: 300
   random-route: true
   path: application/target/address-manager-application.war
-  buildpacks:
-    - sap_java_buildpack
+  buildpack: sap_java_buildpack
   env:
     TARGET_RUNTIME: tomee
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:96m..'
     SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    ALLOW_MOCKED_AUTH_HEADER: true
+    destinations: "[{name: 'ErpQueryEndpoint', url: 'bupa-mock-odata-excellent-civet.cfapps.eu10.hana.ondemand.com', username: 'DUMMY', password: 'dummy'}]"
 #  services:
 #  - my-application-logs
 #  - my-xsuaa
