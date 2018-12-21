@@ -1,4 +1,4 @@
-package com.sap.cloud.s4hana.examples;
+package com.sap.cloud.s4hana.examples.addressmgr;
 
 import io.restassured.RestAssured;
 import org.jboss.arquillian.container.test.api.Deployment;

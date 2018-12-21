@@ -85,6 +85,30 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana.datamodel</groupId>
+            <artifactId>odata-api</artifactId>
+            <version>2.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana.datamodel</groupId>
+            <artifactId>odata-api</artifactId>
+            <version>2.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana.datamodel</groupId>
+            <artifactId>odata-api</artifactId>
+            <version>2.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.s4hana.datamodel</groupId>
+            <artifactId>odata-api</artifactId>
+            <version>2.8.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
