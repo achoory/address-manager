@@ -46,6 +46,7 @@ public class BusinessPartnerServletTest {
         RestAssured.baseURI = baseUrl.toExternalForm();
     }
 
+    //Testing for the business-partners api
     @Test
     public void testGetAll(){
         // @formatter:off
