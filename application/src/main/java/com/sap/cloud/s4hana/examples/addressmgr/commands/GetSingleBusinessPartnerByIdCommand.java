@@ -3,22 +3,17 @@ package com.sap.cloud.s4hana.examples.addressmgr.commands;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.sap.cloud.sdk.cloudplatform.cache.CacheKey;
+import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.s4hana.connectivity.CachingErpCommand;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpCommand;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
-import com.sap.cloud.sdk.frameworks.hystrix.HystrixUtil;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.link.BusinessPartnerAddressLink;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 import org.slf4j.Logger;
 
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-
 import javax.annotation.Nonnull;
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("PMD")
 public class GetSingleBusinessPartnerByIdCommand extends CachingErpCommand<BusinessPartner> {
     private static final Logger logger = CloudLoggerFactory.getLogger(GetSingleBusinessPartnerByIdCommand.class);
 

@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 
+@SuppressWarnings("PMD")
 public class DeleteAddressCommand extends ErpCommand<Integer> {
     private static final Logger logger = CloudLoggerFactory.getLogger(DeleteAddressCommand.class);
 

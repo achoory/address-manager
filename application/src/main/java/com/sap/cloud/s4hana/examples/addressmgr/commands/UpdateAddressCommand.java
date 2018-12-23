@@ -8,6 +8,7 @@ import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 
+@SuppressWarnings("PMD")
 public class UpdateAddressCommand extends ErpCommand<Integer> {
     private static final Logger logger = CloudLoggerFactory.getLogger(UpdateAddressCommand.class);
 

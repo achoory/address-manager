@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+@SuppressWarnings("PMD")
 public class GetAllBusinessPartnersCommand extends CachingErpCommand<List<BusinessPartner>> {
     private static final Logger logger = CloudLoggerFactory.getLogger(GetAllBusinessPartnersCommand.class);
 
