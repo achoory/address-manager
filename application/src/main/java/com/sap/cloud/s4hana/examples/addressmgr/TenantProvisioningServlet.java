@@ -1,5 +1,9 @@
 package com.sap.cloud.s4hana.examples.addressmgr;
 
+import com.sap.cloud.s4hana.examples.addressmgr.datasource.GenericEntityManagerFacade;
+import com.sap.cloud.s4hana.examples.addressmgr.util.HttpServlet;
+import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
+import com.sap.cloud.sdk.frameworks.liquibase.SchemaPerTenantProvisioner;
 import liquibase.exception.LiquibaseException;
 import org.hibernate.Session;
 import org.hibernate.internal.SessionImpl;
@@ -13,10 +17,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.sap.cloud.s4hana.examples.addressmgr.datasource.GenericEntityManagerFacade;
-import com.sap.cloud.s4hana.examples.addressmgr.util.HttpServlet;
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
-import com.sap.cloud.sdk.frameworks.liquibase.SchemaPerTenantProvisioner;
 import static com.sap.cloud.s4hana.examples.addressmgr.util.TenantUtil.SCHEMA_PREFIX;
 
 @WebServlet("/api/callback/tenant/*")
@@ -65,7 +65,7 @@ public class TenantProvisioningServlet extends HttpServlet {
     }
 
     private String retrieveTenantId(final HttpServletRequest request) {
-        System.out.println(request.getPathInfo());
+        //System.out.println(request.getPathInfo());
         final String pathInfo = request.getPathInfo();
         return pathInfo.split("/")[TENANT_PARAMETER_INDEX];
     }
