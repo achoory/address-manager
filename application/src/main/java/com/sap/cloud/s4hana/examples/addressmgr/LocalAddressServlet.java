@@ -1,6 +1,16 @@
 package com.sap.cloud.s4hana.examples.addressmgr;
 
 import com.google.gson.Gson;
+import com.sap.cloud.s4hana.examples.addressmgr.commands.CreateAddressCommand;
+import com.sap.cloud.s4hana.examples.addressmgr.datasource.MultitenantEntityManagerFacade;
+import com.sap.cloud.s4hana.examples.addressmgr.models.Address;
+import com.sap.cloud.s4hana.examples.addressmgr.models.Status;
+import com.sap.cloud.s4hana.examples.addressmgr.util.HttpServlet;
+import com.sap.cloud.s4hana.examples.addressmgr.views.AddressView;
+import com.sap.cloud.s4hana.examples.addressmgr.views.ViewModelConverter;
+import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.EnumUtils;
 import org.slf4j.Logger;
@@ -12,17 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-
-import com.sap.cloud.s4hana.examples.addressmgr.commands.CreateAddressCommand;
-import com.sap.cloud.s4hana.examples.addressmgr.datasource.MultitenantEntityManagerFacade;
-import com.sap.cloud.s4hana.examples.addressmgr.models.Address;
-import com.sap.cloud.s4hana.examples.addressmgr.models.Status;
-import com.sap.cloud.s4hana.examples.addressmgr.util.HttpServlet;
-import com.sap.cloud.s4hana.examples.addressmgr.views.AddressView;
-import com.sap.cloud.s4hana.examples.addressmgr.views.ViewModelConverter;
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 
 @WebServlet("/api/addresses-local")
 public class LocalAddressServlet extends HttpServlet {
@@ -124,7 +123,7 @@ public class LocalAddressServlet extends HttpServlet {
             entityManager.close();
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
         } catch (IllegalArgumentException e) {
-            logger.error("Wrong parameters in the HTTP request");
+            logger.error("Wrong parameters in the HTTP request", e);
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
         }
     }
