@@ -1,4 +1,3 @@
-**/credentials.*
 **/target/
 /s4hana_pipeline
 **/*.log
