@@ -30,11 +30,11 @@ stages:
     nonErpDestinations:
       - 'ErpQueryEndpoint'
 
-#  productionDeployment:
-#    cfTargets:
-#      - org: 'org'
-#        space: 'Productive'
-#        apiEndpoint: 'https://'
-#        appName: 'appName'
-#        manifest: 'manifest.yml'
-#        credentialsId: 'credentialsId'
+  productionDeployment:
+    cfTargets:
+      - org: 'org'
+        space: 'Productive'
+        apiEndpoint: 'https://xxxxx.com'
+        appName: 'appName'
+        manifest: 'manifest.yml'
+        credentialsId: 'credentialsId'
